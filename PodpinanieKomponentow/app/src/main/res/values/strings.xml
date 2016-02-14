@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PodpinanieKomponentow</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="napis_1">Cześć, jestem napisem!</string>
+    <string name="napis_2">Ja też jestem napisem, ale kolorowym!</string>
+
+</resources>

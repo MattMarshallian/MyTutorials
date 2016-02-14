@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_embedded"
+        android:title="MP3 embedded"/>
+    <item android:id="@+id/menu_sdcard"
+        android:title="MP3 from SD card" />
+    <item android:id="@+id/menu_internet"
+        android:title="MP3 z internetu" />
+</menu>

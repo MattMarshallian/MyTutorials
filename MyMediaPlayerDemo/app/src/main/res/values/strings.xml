@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Media Player Demo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="back"><![CDATA[<]]></string>
+    <string name="backback"><![CDATA[<<]]></string>
+</resources>

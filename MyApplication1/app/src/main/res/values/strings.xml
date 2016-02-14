@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application 1</string>
+    <string name="action_settings">Settings</string>
+    <string name="checkbox1">Zaznacz</string>
+    <string name="hello_world">Witaj świecie!</string>
+    <string name="press_button1">Naciśnij mnie</string>
+</resources>

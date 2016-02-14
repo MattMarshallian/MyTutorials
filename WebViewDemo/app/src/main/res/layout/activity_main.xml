@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.tutorial.marcin.webviewdemo.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbInternet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Internet"
+                android:onClick="onRBClick"/>
+
+            <RadioButton
+                android:id="@+id/rbIntranet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="INTRANET"
+                android:onClick="onRBClick">
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/rbLocalhost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Localhost"
+                android:onClick="onRBClick">
+            </RadioButton>
+
+        </LinearLayout>
+
+        <LinearLayout android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="0px"
+            android:layout_height="0px" >
+            <requestFocus />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"
+            android:singleLine="false"
+
+            android:hint="http://192.168.13.101:8080/myapps/" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Otwórz"
+            android:onClick="onClickButtonOpen"/>
+
+    </LinearLayout>
+
+
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true"
+        android:layout_weight="0.42" />
+
+</LinearLayout>

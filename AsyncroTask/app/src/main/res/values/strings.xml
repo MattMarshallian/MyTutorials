@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AsyncroTask</string>
+    <string name="get_server_data">Click to get server data</string>
+</resources>
