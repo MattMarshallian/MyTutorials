@@ -3,6 +3,7 @@ package com.example.tutorial.marcin.mysavedatafile;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -53,27 +54,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         verifyStoragePermissions(MainActivity.this);
 
+        final Button bOtworz = (Button) findViewById(R.id.buttonOtworz);
         downloadedSize = 0;
 
         Button b = (Button) findViewById(R.id.buttonDownload);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 showProgress(download_file_path);
+
+                bOtworz.setVisibility(View.VISIBLE);
 
                 new Thread(new Runnable() {
                     public void run() {
 
-                        if (isServerOnline())
-                        {
-                            showError("Serwer działa");
-                        }
-                        else
-                        {
-                            showError("Serwer NIE działa");
-                        }
+                        // showError(isServerOnline() ? "Serwer działa" : "Serwer NIE działa");
 
-                        // downloadFile();
+                        downloadFile();
 
                         try {
                             inflateFile();
@@ -88,17 +86,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void inflateFile() throws Exception {
-        runOnUiThread(new Runnable() {
+/*        runOnUiThread(new Runnable() {
             int totalSize = 300000;
 
             public void run() {
                 pb.setMax(totalSize);
             }
-        });
+        });*/
 
         File SDCardRoot = Environment.getExternalStorageDirectory();
         File file = new File(SDCardRoot,"downloaded_file.zip");
-
 
         File theDir = new File(SDCardRoot, "HTML5");
 
@@ -106,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
         // if the directory does not exist, create it
         if (!theDir.exists()) {
-            try{
+            try {
                 theDir.mkdir();
             }
             catch(SecurityException se) { }
@@ -122,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
     public void downloadFile() {
         try {
@@ -193,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    void showError(final String err) {
+    private void showError(final String err) {
         runOnUiThread(new Runnable() {
             public void run() {
                 Toast.makeText(MainActivity.this, err, Toast.LENGTH_LONG).show();
@@ -203,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    void showProgress(String file_path){
+    private void showProgress(String file_path){
         dialog = new Dialog(MainActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.myprogressdialog);
@@ -298,6 +296,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     public boolean isInternetAvailable() {
         try {
             InetAddress ipAddr = InetAddress.getByName("google.com"); //You can replace it with your name
@@ -313,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
         Runtime runtime = Runtime.getRuntime();
         try {
 
-            Process ipProcess = runtime.exec("/system/bin/ping -c 1 192.168.13.1");
+            Process ipProcess = runtime.exec("/system/bin/ping -c 1 192.168.13.101");
             int     exitValue = ipProcess.waitFor();
             return (exitValue == 0);
 
@@ -328,5 +327,12 @@ public class MainActivity extends AppCompatActivity {
         Process proc = Runtime.getRuntime().exec(cmd);
         proc.waitFor();
         return proc.exitValue();
+    }
+
+    public void onClickOpenButton(View v) {
+        // start new Activity here
+        Intent intent = new Intent(this, WebViewActivity.class);
+        startActivity(intent);
+
     }
 }
