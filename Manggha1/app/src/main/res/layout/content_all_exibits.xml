@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/zero"
+    android:paddingLeft="@dimen/zero"
+    android:paddingRight="@dimen/zero"
+    android:paddingTop="@dimen/zero"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.tutorial.marcin.manggha1.AllExibitsActivity"
+    tools:showIn="@layout/activity_all_exibits">
+
+    <ScrollView
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:fadeScrollbars="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="top"
+        android:layout_marginBottom="0dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/exhib1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/all2_1"
+                android:adjustViewBounds="true"
+                android:onClick="onSelectExibition" />
+
+            <ImageView
+                android:id="@+id/exhib2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/all2_2"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:onClick="onSelectExibition" />
+
+            <ImageView
+                android:id="@+id/exhib3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/all2_3"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:onClick="onSelectExibition" />
+
+            <ImageView
+                android:id="@+id/exhib4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/all2_4"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:onClick="onSelectExibition" />
+
+            <ImageView
+                android:id="@+id/exhib21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/all2_2"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:onClick="onSelectExibition" />
+
+            <ImageView
+                android:id="@+id/exhib31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/all2_3"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:onClick="onSelectExibition" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
