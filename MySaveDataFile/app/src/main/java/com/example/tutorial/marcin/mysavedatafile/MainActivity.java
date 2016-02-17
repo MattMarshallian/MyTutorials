@@ -329,6 +329,7 @@ public class MainActivity extends AppCompatActivity {
         return proc.exitValue();
     }
 
+
     public void onClickOpenButton(View v) {
         // start new Activity here
         Intent intent = new Intent(this, WebViewActivity.class);
