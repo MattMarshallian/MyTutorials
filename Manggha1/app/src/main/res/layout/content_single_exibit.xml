@@ -8,27 +8,11 @@
     tools:context="com.example.tutorial.marcin.manggha1.SingleExibitActivity"
     tools:showIn="@layout/activity_single_exibit">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
+        <WebView
+            android:id="@+id/webView1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Zajebista klawiatura"
-            android:typeface="serif"
-            android:textSize="32dp"/>
+            android:layout_height="match_parent" >
 
-        <ImageView
-            android:id="@+id/exhib31"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/unit1"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:onClick="onSelectExibition" />
-
-    </LinearLayout>
+        </WebView>
 
 </android.support.v4.widget.NestedScrollView>

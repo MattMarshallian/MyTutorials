@@ -14,8 +14,8 @@ public class AllExibitsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_exibits);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    //    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
     }
 
     public void onClickEmpty (View view) {
@@ -29,27 +29,28 @@ public class AllExibitsActivity extends AppCompatActivity {
 
         switch (view.getId()) {
             case R.id.exhib1:
-                intent.putExtra("passed_param_1", "exhib_1");
+                intent.putExtra("passed_param_1", "Ślad");
                 break;
 
             case R.id.exhib21:
             case R.id.exhib2:
-                intent.putExtra("passed_param_1", "exhib_2");
+                intent.putExtra("passed_param_1", "Takayuki Hara");
                 break;
 
             case R.id.exhib31:
             case R.id.exhib3:
-                intent.putExtra("passed_param_1", "exhib_3");
+                intent.putExtra("passed_param_1", "Estetyka QR kodu");
                 break;
 
             case R.id.exhib4:
-                intent.putExtra("passed_param_1", "exhib_4");
+                intent.putExtra("passed_param_1", "Aktorzy, lalki i gra cieni");
                 break;
 
             default:
                 break;
         }
 
+        intent.putExtra("exhibit", view.getId());
         startActivity(intent);
 
     }
