@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 public class AllExibitsActivity extends AppCompatActivity {
 
@@ -16,6 +18,11 @@ public class AllExibitsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_all_exibits);
     //    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
+
+        WebView webView = (WebView) findViewById(R.id.webViewAll);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(false);
+        webView.loadUrl("http://matt.opx.pl");
     }
 
     public void onClickEmpty (View view) {
@@ -30,20 +37,24 @@ public class AllExibitsActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.exhib1:
                 intent.putExtra("passed_param_1", "Ślad");
+                intent.putExtra("zone", 1);
                 break;
 
-            case R.id.exhib21:
+           // case R.id.exhib21:
             case R.id.exhib2:
                 intent.putExtra("passed_param_1", "Takayuki Hara");
+                intent.putExtra("zone", 2);
                 break;
 
-            case R.id.exhib31:
+           // case R.id.exhib31:
             case R.id.exhib3:
                 intent.putExtra("passed_param_1", "Estetyka QR kodu");
+                intent.putExtra("zone", 3);
                 break;
 
             case R.id.exhib4:
                 intent.putExtra("passed_param_1", "Aktorzy, lalki i gra cieni");
+                intent.putExtra("zone", 4);
                 break;
 
             default:

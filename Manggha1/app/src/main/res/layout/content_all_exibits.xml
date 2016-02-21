@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,9 +8,19 @@
     android:paddingLeft="@dimen/zero"
     android:paddingRight="@dimen/zero"
     android:paddingTop="@dimen/zero"
+    android:orientation="vertical"
+    android:weightSum="10"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.tutorial.marcin.manggha1.AllExibitsActivity"
     tools:showIn="@layout/activity_all_exibits">
+
+
+    <WebView
+        android:id="@+id/webViewAll"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="200dp"/>
+
 
     <ScrollView
         android:scrollbarAlwaysDrawVerticalTrack="true"
@@ -20,12 +30,14 @@
         android:id="@+id/scrollView"
         android:layout_alignParentTop="true"
         android:layout_gravity="top"
+        android:layout_weight="9"
         android:layout_marginBottom="0dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:layout_weight="2"
             android:orientation="vertical">
 
             <ImageView
@@ -62,7 +74,7 @@
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:onClick="onSelectExibition" />
-
+<!--
             <ImageView
                 android:id="@+id/exhib21"
                 android:layout_width="wrap_content"
@@ -79,9 +91,9 @@
                 android:src="@drawable/all2_3"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-                android:onClick="onSelectExibition" />
+                android:onClick="onSelectExibition" /> -->
 
         </LinearLayout>
 
     </ScrollView>
-</RelativeLayout>
+</LinearLayout>
