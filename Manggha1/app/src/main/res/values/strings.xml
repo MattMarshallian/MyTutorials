@@ -93,4 +93,10 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="empty"></string>
+    <string name="gejsze">Młode gejsze</string>
+    <string name="Iaidoka_seiza">Iaidoka seiza</string>
+    <string name="gejsza">Staromodna gejsza</string>
+    <string name="samuraj">Samuraj</string>
+    <string name="jodo">Samuraje się naparzają</string>
+    <string name="samuraj_color">Samuraj w kolorowym kimonie</string>
 </resources>

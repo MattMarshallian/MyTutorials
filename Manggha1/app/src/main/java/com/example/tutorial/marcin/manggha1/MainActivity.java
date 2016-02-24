@@ -14,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+
+
 public class MainActivity extends AppCompatActivity {
 
     // Storage Permissions
@@ -30,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         // setSupportActionBar(toolbar);
         verifyStoragePermissions(MainActivity.this);
-
-
     }
 
     @Override
@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickShowAllExibits (View view) {
-        Intent intent = new Intent(this, AllExibitsActivity.class);
+        // Intent intent = new Intent(this, AllExibitsActivity.class);
+        Intent intent = new Intent(this, AllExhibitsCarouselActivity.class);
         startActivity(intent);
     }
 

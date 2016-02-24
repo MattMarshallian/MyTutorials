@@ -34,29 +34,27 @@ public class SingleExibitActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ImageView imageInToolbar = (ImageView) findViewById(R.id.prof_img_picBackground);
+        String urlToLoad = "http://matt.opx.pl/";
         String zoneStr = "";
 
         switch (idExhibit) {
-            case R.id.exhib1:
-                imageInToolbar.setBackgroundResource(R.drawable.all2_1);
+            case 0:
+                imageInToolbar.setBackgroundResource(R.drawable.top_gejsze);
+                break;
+
+            case 1:
+                imageInToolbar.setBackgroundResource(R.drawable.top_iaidoka_seiza);
                 zoneStr = "zone1";
                 break;
 
-          //  case R.id.exhib21:
-            case R.id.exhib2:
-                imageInToolbar.setBackgroundResource(R.drawable.all2_2);
+            case 2:
+                imageInToolbar.setBackgroundResource(R.drawable.top_gejsza);
                 zoneStr = "zone2";
                 break;
 
-          //  case R.id.exhib31:
-            case R.id.exhib3:
-                imageInToolbar.setBackgroundResource(R.drawable.all2_3);
+            case 3:
+                imageInToolbar.setBackgroundResource(R.drawable.top_samuraj_color);
                 zoneStr = "zone3";
-                break;
-
-            case R.id.exhib4:
-                imageInToolbar.setBackgroundResource(R.drawable.all2_4);
-                zoneStr = "zone4";
                 break;
 
             default:
@@ -77,6 +75,6 @@ public class SingleExibitActivity extends AppCompatActivity {
         WebView webView = (WebView) findViewById(R.id.webView1);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("http://matt.opx.pl/" + zoneStr);
+        webView.loadUrl(urlToLoad + zoneStr);
     }
 }

@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import com.example.tutorial.marcin.mylibrary.general.containers.FeatureCoverFlow;
+
 
 public class AllExibitsActivity extends AppCompatActivity {
 
