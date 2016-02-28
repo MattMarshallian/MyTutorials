@@ -79,7 +79,7 @@ public class AllExhibitsCarouselActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Start new activity
-                selectExibition(position);
+                selectExibition(position, 0);
             }
         });
 
@@ -123,7 +123,7 @@ public class AllExhibitsCarouselActivity extends AppCompatActivity {
     }
 
 
-    public void selectExibition(int position) {
+    public void selectExibition(int position, int sourceOfChange) {
         Intent intent = new Intent(this, SingleExibitActivity.class);
 
         switch (position) {
@@ -152,6 +152,7 @@ public class AllExhibitsCarouselActivity extends AppCompatActivity {
         }
 
         intent.putExtra("exhibit", position);
+        intent.putExtra("sourceOfChange", sourceOfChange);
         startActivity(intent);
     }
 }
