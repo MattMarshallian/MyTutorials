@@ -14,13 +14,15 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 public class ScrollingActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +32,6 @@ public class ScrollingActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
@@ -95,6 +95,14 @@ public class ScrollingActivity extends AppCompatActivity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+
+            WebView webView = (WebView) rootView.findViewById(R.id.webView);
+            WebSettings webSettings = webView.getSettings();
+            webView.setWebViewClient(new WebViewClient());
+            webSettings.setJavaScriptEnabled(false);
+
+            webView.loadUrl("http://www.google.pl");
+
             return rootView;
         }
     }
