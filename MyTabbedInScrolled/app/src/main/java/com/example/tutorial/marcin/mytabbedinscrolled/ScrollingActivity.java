@@ -101,7 +101,7 @@ public class ScrollingActivity extends AppCompatActivity {
             webView.setWebViewClient(new WebViewClient());
             webSettings.setJavaScriptEnabled(false);
 
-            webView.loadUrl("http://www.google.pl");
+            webView.loadUrl("http://google.pl/");
 
             return rootView;
         }
