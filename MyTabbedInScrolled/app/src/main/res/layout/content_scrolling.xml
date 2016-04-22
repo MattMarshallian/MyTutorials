@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="com.example.tutorial.marcin.mytabbedinscrolled.MainActivity"
+        tools:context="com.example.tutorial.marcin.mytabbedinscrolled.ScrollingActivity"
         android:minHeight="1000dp">
 
         <android.support.design.widget.AppBarLayout
